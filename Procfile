@@ -1,0 +1,1 @@
+web: gunicorn crazy4python.wsgi:application --log-file -
