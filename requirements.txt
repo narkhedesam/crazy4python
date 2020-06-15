@@ -5,3 +5,4 @@ django-tinymce==3.0.2
 django-tinymce-images==0.1.2
 django-wysiwyg==0.8.0
 djangorestframework==3.11.0
+gunicorn
