@@ -155,8 +155,6 @@ python-dateutil==2.8.1
 python-dotenv==0.12.0
 python3-openid==3.1.0
 pytz==2019.3
-pywin32==227
-pywin32-ctypes==0.2.0
 pywinpty==0.5.7
 pyzmq==19.0.0
 qstring==0.2.1
