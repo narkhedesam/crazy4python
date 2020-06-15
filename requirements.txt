@@ -136,7 +136,6 @@ pycparser==2.20
 pygame==1.9.6
 Pygments==2.6.1
 PyHamcrest==2.0.2
-pyinstaller @ git+https://github.com/pyinstaller/pyinstaller.git@15ecf7474fbb735cc6a2de2db78ae32ba16a5178
 pylint==2.5.3
 pylint-django==2.0.15
 pylint-plugin-utils==0.6
