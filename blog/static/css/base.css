@@ -27,7 +27,6 @@ crazy{
 }
 four{
     font-family: monospace;
-    font-size: xx-large;
     color: chocolate;
 }
 .page-link{
@@ -41,4 +40,37 @@ four{
 .page-link:hover{
     background-color: #007bff;
     color:#fff
+}
+.comments{
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #E3E7EB;
+}
+.comments > p.font-weight-bold > span{
+    font-size: .8rem;
+}
+.comment_count{
+    color: #15c39a ;
+    font-weight: 700;
+}
+.posts .card-title{
+    color: #15c39a ;
+    text-decoration: none;
+    font-family: monospace;
+}
+a:hover{
+    color: #15c39a ;
+    text-decoration: none;
+}
+.navbar-brand{
+    font-size: 2rem;
+}
+.posts h1{
+    font-family: monospace;
+    color: #15c39a ;
+}
+.views{
+    font-size: 1rem;
+    font-family: cursive;
+    font-weight: 400;
+    color: #15c39a;
 }

@@ -1,16 +1,71 @@
 {% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 left  top">
+    <div class="col-md-8 card mb-4  mt-3 left  top posts">
       <div class="card-body">
-        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        {% if post.image %}
+            <img src="{{ post.image.url}}" alt="image" width="100%">
+        {% endif %}
+        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
         <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-        <p class="card-text ">{{ object.content | safe }}</p>
+        <div class="views">views : {{ post.total_views }}</div>
+        <p class="card-text ">{{ post.content | safe }}</p>
       </div>
     </div>
     {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <!-- comments -->
+        {% with comments.count as total_comments %}
+        <h6 class="comment_count">{{ total_comments }} comments</h6>
+
+        <p>
+          {% endwith %} {% for comment in comments %}
+        </p>
+
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+            </span>
+          </p>
+          {{ comment.body | linebreaks }}
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <button class="btn btn-primary leave_comment_btn" onclick="display_form();">Leave a comment</button>
+        <h3 class="comment_form_header" style="display:none;">Leave a comment</h3>
+        <form class="comment_form" method="post" style="margin-top: 1.3em;display:none;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  $(function() {
+    jQuery(".comments").each(function() {var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';jQuery(this).css("background-color", hue);});
+  });
+  function display_form(){
+      $('.comment_form_header').show();
+      $('.comment_form').show();
+      $('.leave_comment_btn').hide();
+}
+</script>
 {% endblock content %}

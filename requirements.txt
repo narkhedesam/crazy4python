@@ -7,3 +7,5 @@ django-wysiwyg==0.8.0
 djangorestframework==3.11.0
 gunicorn
 django-heroku
+django-crispy-forms
+django-summernote

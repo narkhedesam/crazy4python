@@ -33,14 +33,17 @@
 <div class="container">
     <div class="row">
         <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
+        <div class="col-md-8 mt-3 left posts">
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
+                    {% if post.image %}
+                        <img src="{{ post.image.url}}" alt="image" width="100%" style="opacity:.5;">
+                    {% endif %}
+                    <a href="{% url 'post_detail' post.slug  %}"><h2 class="card-title">{{ post.title }}</h2></a>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{ post.small_description }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More...</a>
                 </div>
             </div>
             {% endfor %}
@@ -60,5 +63,6 @@
             </ul>
         {% endif %}
         </div>
+</div>
 </div>
 {%endblock%}

@@ -35,16 +35,20 @@
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 left search_result_title">Search Results</div>
+        <div class="col-md-8 mt-3 left search_result_title">Search Results for {{request.GET.q}}</div>
         <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
+        {% if object_list %}
+        <div class="col-md-8 mt-3 left posts">
             {% for post in object_list %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
+                    {% if post.image %}
+                        <img src="{{ post.image.url}}" alt="image" width="100%" style="opacity:.5;">
+                    {% endif %}
+                    <a href="{% url 'post_detail' post.slug  %}"><h2 class="card-title">{{ post.title }}</h2></a>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{ post.small_description }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More...</a>
                 </div>
             </div>
             {% empty %}
@@ -58,14 +62,20 @@
                 <nav aria-label="Page navigation conatiner"></nav>
                 <ul class="pagination justify-content-center">
                     {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link mr-2">PREV</a></li>
+                    <li><a href="?q={{request.GET.q}}&page={{ page_obj.previous_page_number }}" class="page-link mr-2">PREV</a></li>
                     {% endif %}
                     {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link ml-2">NEXT</a></li>
+                    <li><a href="?q={{request.GET.q}}&page={{ page_obj.next_page_number }}" class="page-link ml-2">NEXT</a></li>
     
                     {% endif %}
                 </ul>
             {% endif %}
+        </div>
+        {% endif %}
+        {% else %}
+            <div class="col-md-8 mt-3 left">
+                <div class="col-md-8 mt-3 left">No Result Found for your search</div>
+            </div>
         {% endif %}
         </div>
     </div>
