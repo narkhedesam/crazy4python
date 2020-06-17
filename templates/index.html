@@ -37,9 +37,11 @@
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
+
                     {% if post.image %}
                         <img class="mb-2" src="{{ post.image.url}}" alt="image" width="100%" style="border-radius: 12px;">
                     {% endif %}
+                    
                     <a href="{% url 'post_detail' post.slug  %}"><h2 class="card-title">{{ post.title }}</h2></a>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{ post.small_description }}</p>
