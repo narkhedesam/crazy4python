@@ -1,4 +1,4 @@
-from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin, SummernoteInplaceWidget
 from django.contrib import admin
 from .models import post, Comment
 
@@ -8,7 +8,7 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content',)
+    SummernoteInplaceWidget = ('content',)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
