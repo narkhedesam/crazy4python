@@ -1,0 +1,6 @@
+/staticfiles
+/crazy4python/__pycache__
+/blog/__pycache__
+/blog/migrations
+/media
+db.sqlite3
