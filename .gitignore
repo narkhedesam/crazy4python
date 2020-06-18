@@ -3,4 +3,5 @@
 /blog/__pycache__
 /blog/migrations
 /media
+/static
 db.sqlite3
