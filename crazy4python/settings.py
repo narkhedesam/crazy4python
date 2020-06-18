@@ -25,7 +25,7 @@ PROJECT_ROOT = BASE_DIR
 SECRET_KEY = '&^ry(fcl*&i#*g_$uei=5!2p1sb1l$^=lsec!((sv@w-*^k4_)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['codewithsameer.pythonanywhere.com']
 
