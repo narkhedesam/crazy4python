@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.utils.crypto import get_random_string
 # import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,12 +23,12 @@ PROJECT_ROOT = BASE_DIR
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&^ry(fcl*&i#*g_$uei=5!2p1sb1l$^=lsec!((sv@w-*^k4_)'
+SECRET_KEY = str(get_random_string(length=32))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['codewithsameer.pythonanywhere.com']
+ALLOWED_HOSTS = ['codewithsameer.pythonanywhere.com', 'crazy4python.pythonanywhere.com', 'crazy4python.herokuapp.com']
 
 
 # Application definition
