@@ -2,7 +2,9 @@
 <p align="center">
     <img width="460" height="300" src="https://raw.githubusercontent.com/narkhedesam/crazy4python/master/crazy4python_200x200.jpg">
 </p>
-[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/sameernarkhede/250)
+<a href="https://paypal.me/sameernarkhede/250">
+    <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="paypal">
+</a>
 
 crazy4python is the django blogging site.
 
@@ -48,6 +50,6 @@ Website : https://narkhedesam.github.io/
 ## Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :relaxed: 
-<br/>
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/sameernarkhede/250)
+<a href="https://paypal.me/sameernarkhede/250">
+    <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="paypal">
+</a>
