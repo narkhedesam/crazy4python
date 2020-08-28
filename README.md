@@ -1,6 +1,6 @@
 # crazy4python
 <p align="center">
-    <img width="460" height="300" src="https://raw.githubusercontent.com/narkhedesam/crazy4python/master/crazy4python_200x200.jpg">
+    <img src="https://raw.githubusercontent.com/narkhedesam/crazy4python/master/crazy4python_200x200.jpg" alt="crazy4python">
 </p>
 <a href="https://paypal.me/sameernarkhede/250">
     <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="paypal">
