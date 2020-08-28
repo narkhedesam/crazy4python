@@ -42,10 +42,7 @@
     <div class="col-md-8 card mb-4  mt-3 ">
       <div class="card-body">
         {% if new_comment %}
-        <div class="alert alert-success" role="alert">
-          Your comment is awaiting moderation
-        </div>
-        {% else %}
+        {% endif %}
         <button class="btn btn-primary leave_comment_btn" onclick="display_form();">Leave a comment</button>
         <h3 class="comment_form_header" style="display:none;">Leave a comment</h3>
         <form class="comment_form" method="post" style="margin-top: 1.3em;display:none;">
@@ -53,7 +50,6 @@
           {% csrf_token %}
           <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
         </form>
-        {% endif %}
       </div>
     </div>
   </div>
