@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.utils.crypto import get_random_string
-import django_heroku
+# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,7 @@ SECRET_KEY = str(get_random_string(length=32))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['codewithsameer.pythonanywhere.com', 'crazy4python.pythonanywhere.com', 'crazy4python.herokuapp.com']
+ALLOWED_HOSTS = ['crazy4python.pythonanywhere.com']
 
 
 # Application definition
@@ -162,4 +162,4 @@ LOGGING = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
